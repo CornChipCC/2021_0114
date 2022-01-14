@@ -1,0 +1,23 @@
+#출처 : https://www.acmicpc.net/problem/18310
+# Q5 Answer template
+
+def solution(numbers):
+    avg = sum(numbers) / len(numbers)
+    arr = []
+    for i in range(len(numbers)):
+        if avg - numbers[i] < 0 :
+            arr.append((avg-numbers[i])* -1)
+        else :
+            arr.append(avg - numbers[i])
+    min = arr[0]
+    index = 0
+    for i in range(len(arr)):
+        if min > arr[i] :
+            min = arr[i]
+            index = i
+    answer = numbers[index]
+    return answer
+
+numbers = [1, 5, 7, 9]
+answer = solution(numbers)
+print(answer)
