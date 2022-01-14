@@ -1,0 +1,18 @@
+#출처 : https://www.acmicpc.net/problem/2108
+# Q0 Answer template
+
+n = int(input())
+data = []
+for i in range(n):
+    data.append(int(input()))
+min = data[0]
+max = data[0]
+for i in range(n):
+    if(min > data[i]) : min = data[i]
+    if(max < data[i]) : max = data[i]
+avg = int(round(sum(data) / n, 0))
+data.sort()
+middle = data[int(n/2)]
+length = max - min
+answer = 0
+print(avg, middle, length)
