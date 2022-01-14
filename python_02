@@ -1,0 +1,16 @@
+# 피보나치 수열
+# Q1 Answer template
+
+def solution(n):
+    answer = 0
+    n = int(input('값을 입력하세요.'))
+    data=[None]*(n+1)
+    data[0] = 0
+    data[1] = 1
+    for i in range(2,n+1):
+        data[i] = (data[i-1] + data[i-2])
+    answer = data[n]
+    return answer
+
+answer = solution(n)
+print(answer)
