@@ -1,0 +1,25 @@
+# 출처 : https://programmers.co.kr/learn/courses/30/lessons/68644
+# Q2 Answer template
+
+def solution(numbers):
+    answer = []
+    n = len(numbers)
+    for i in range(n) :
+        for j in range(n):
+            if i != j :
+                answer.append(numbers[i]+numbers[j])
+    answer.sort(reverse=0)
+    count = 0
+    for k in range(len(answer)):
+        for m in range(k+1,len(answer)):
+            if answer[k] == answer[m] : 
+                answer[k] =-1
+                count += 1
+                break
+    for a in range(count):
+        answer.remove(-1)
+    return answer
+
+numbers = [5,0,2,7]
+answer = solution(numbers)
+print(answer)
